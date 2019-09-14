@@ -112,7 +112,7 @@ while True:
 
             if resposta == 0:
                 print("\nObrigado por utilizar o sistema de estoque.")
-                exit()
+                sys.exit()
                 #Agradecimento e saida do programa.
 
             else:
