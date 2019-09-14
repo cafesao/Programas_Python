@@ -1,5 +1,5 @@
 # Apenas uma brincadeira elaborada.
-# E um programa simples, mas tambem podemos usar a biblioteca googletrans,
+# É um programa simples, mas tambem podemos usar a biblioteca googletrans,
 # Que traduz a palavra para qualquer idioma
 
 
