@@ -1,6 +1,3 @@
-#Todo o controle de estoque de um mercado.
-
-
 from random import randint
 import copy
 import time
@@ -112,7 +109,7 @@ while True:
 
             if resposta == 0:
                 print("\nObrigado por utilizar o sistema de estoque.")
-                sys.exit()
+                exit()
                 #Agradecimento e saida do programa.
 
             else:

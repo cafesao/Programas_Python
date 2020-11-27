@@ -1,10 +1,8 @@
-#Como o nome ja diz, e um jogo da forca.
-
-
 from random import choice
 
 palavras = ["COMER", "MUSICA", "BANANA", "CACHORRO", "GATO", "IMPRESSORA", "PANO", "ALICATE", "MOUSE", "PAPEL", "TECLADO", "MOUSEPAD", "MONITOR", "TELEVISAO", "JANELA", "CELULAR", "TELEFONE"]
-letras_digitadas = []
+letras_certas = []
+letras_erradas = []
 palavra_lista = []
 erros = index = 0
 
@@ -181,10 +179,6 @@ while True:
     palavra = choice(palavras)
     numero_letra = int(len(palavra))
     boneco_Inicio()
-    letras_digitadas.clear()
-    palavra_lista.clear()
-    erros = 0
-    index = 0
     print("\nBem vindo ao JOGO DA VELHA, um jogo que exercita seu cerébro e te diverti, vamos jogar!!")
     resposta = str(input("\nDeseja jogar? (Sim / Não): ")).split()[0].upper()
     if resposta == 'S':
@@ -215,17 +209,20 @@ while True:
             if erros == 10:
                 boneco_10Erro()   
             if erros == 11:   
-                boneco_Inicio()    
+                boneco_Inicio()      
+            if erros == 11:
                 print("\nInfelizmente você perdeu, mais sorte da proxima vez :(")
-                break     
+                break  
             print(f"\nSua palavra tem {numero_letra} letras\n")
             verificacao = ''.join(map(str, palavra_lista))
             if verificacao in palavra:
-                print("\nParabens, você conseguiu descobrir a palavra!")
+                print("\nParabes, você conseguiu descobrir a palavra!")
                 break 
             print(f"Palavra: {verificacao}")
-            letras_digitadas_palavra = ','.join(map(str, letras_digitadas))
-            print(f"\nLetras digitadas: {letras_digitadas_palavra}")
+            letras_certas_palavra = ','.join(map(str, letras_certas))
+            letras_erradas_palavra = ','.join(map(str, letras_erradas))
+            print(f"\nLetras certas: {letras_certas_palavra}")
+            print(f"Letras erradas: {letras_erradas_palavra}")
             print("A qualquer momento você pode digitar EUSEI e responder toda a palavra, ", end="")
             print("caso acerte, você ganha, mas caso erre, infelizmente você perdera sem chance de tentar de novo.")
             resposta_letra = str(input("\nDigite a letra que você acha que é: ")).upper()
@@ -240,14 +237,14 @@ while True:
             else:
                 resposta_letra.split()[0]
             while True:
-                if resposta_letra in letras_digitadas_palavra:
+                if resposta_letra in letras_certas_palavra:
                     print("Você ja digitou esta letra.")
                     break
-                if resposta_letra in letras_digitadas_palavra:
+                if resposta_letra in letras_erradas_palavra:
                     print("Você ja digitou esta letra.")
                     break 
                 if resposta_letra in palavra:         
-                    letras_digitadas.append(resposta_letra)
+                    letras_certas.append(resposta_letra)
                     for c in palavra:
                         index_palavra = c.find(resposta_letra)
                         if index_palavra == 0:
@@ -257,7 +254,7 @@ while True:
                     break
                 else:
                     print("Ops, não tem esta letra!")
-                    letras_digitadas.append(resposta_letra)
+                    letras_erradas.append(resposta_letra)
                     erros += 1
                     break
     else:

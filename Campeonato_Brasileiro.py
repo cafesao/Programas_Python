@@ -1,0 +1,6 @@
+futebol = ('Athletico-PR','Atlético','Avaí','Bahia','Botafogo','CSA','Ceará SC','Chapecoense','Corinthians','Cruzeiro','Flamengo','Fluminense','Fortaleza','Goiás','Grêmio','Internacional','Palmeiras','Santos','São Paulo','Vasco da Gama')
+index1 = futebol.index('Chapecoense')
+print(f'Os 5 primeiros colocados: {futebol[0:5]}')
+print(f'Os 4 últimos colocados: {futebol[16:20]}')
+print(f'Os times em ordem Alfabetica {sorted(futebol)}')
+print(f'O time da Chapecoense esta na posição {index1}')

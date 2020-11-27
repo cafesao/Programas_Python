@@ -4,7 +4,7 @@
 saque = total_cedulas = int(0)
 cedulas = int(50)
 print('BEM VINDO AO CAIXA ELETRÔNICO')
-saque = int(input('\nDigite o valor que você deseja sacar: '))
+saque = int(input('\nDigite o valor que você quer sacar: '))
 print()
 while True:
     if saque >= cedulas:
